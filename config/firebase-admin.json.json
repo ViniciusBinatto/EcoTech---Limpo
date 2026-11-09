@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ecotechlimpo",
+  "private_key_id": "ce71ee530e595f396401b02da3ce806ee0824c45",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDeGQetZPDg4s5B\nmP56iURs8KS3FJPpPrWW+OBPL5C+XHyPM62VYW+oSHyrEitLG2HONvsoOyzVIJ5G\nAr+MZAnJKEXZ56mfO0ArVClZH11JPSCpcVgWCMg1jXISrVfDNGN2THiQjRzl6NVr\ngg3zknB4vXIKeSsbJ+ARCGX2kf6wjGglshIc/Wwq4i+8b2Co2HaPhznvJqc6TBND\njYDPprMO1pOtgFHCA/YES8NI8BaGJs2wlKCwfth+iTzf2fCPGWoWD6Re1d7KANp2\nW9+ELAwJclbjN9VJcrRhppQTYQsyza7nTqsDjf4z/XR8yJdr9bTEXiss6bSGmJyc\niTTDh7lhAgMBAAECggEABhfdtA4e5ayTSA1wfeAiNnLrsfIolK+Zv8iYLtP5Pp++\n8xbR3lVMAOvsL61R7r+TkVrEzTfCZR59+SG+K5XbBt/J+s52Qt4XRpkKgV1w6793\nk+5+IiyfgYid5pFG5R4c1HQIor6cWlpm8Ioi49nSqB1acZsdaaNQbGc0lO0wdZt3\ncnwwDLji9vRojkcXvlQIFJ4QlTXfWraFpOlFcA+GYnBBza9sD9hzfmqcXMJBcWbb\ngGC32bq437S9oU+w106Uijd1S7BdZRlGBiF2ITyaD6sXqtjdVIwnRIQDvvqmRyyy\n3kbpwt670Ks37mLL32Osypdu/NUGJ+nyBzaXTnZveQKBgQDwIegQEKa4vFkx7nUq\nlRJiRXH8h60SjFDQIJBmPR9zEKfHIvhvmkNyirkaytioXX2hhvGtIRUmOVDERAp8\nvpxmsaLFjMpex4UeLGiGB04ZZ0vA0tq3uqacg3K6AaxN80JiMIQwMSll+3Hdq+Lp\n1KkxCyJ7jj+a5DWgpM9DgeoDYwKBgQDsxgxH+EWo6xCbduP/M2oLFaqRgwgqYWX/\nKNachLkFDXfytRIHR0mT3hQdDKsxRM8zrOFIEglcfxT4dXbevg+v2AnX0qmsOVjV\nt6gittqhcCdAEyK218UAIzeENvQP2pmIFxI766qMWJN6HIo7qQS6pPusu/4/qKMQ\nTjSZr0klawKBgQChbKmr4wWwuizbvAlXjs7E8RonQK3AAkNxJfLsR7qUh2XCIGgR\n3gnpPgghUqtCw1Zo92YPlGW7RFxfE75ZDWnmPxPE6VhBTq7WEdRSBScjPKVYAma1\ni+vk2xiMogNKg3TkvOif3OyPefCZq6rmtebm6S1NEdsALNlAHIqYPwUpMQKBgEdn\nYoTBxqAuY4++xvtLUguNuSaw0WGWhd/xPOduzy1K5oV3PbycLwA81Ov9yhLNoX7/\n/+BwMAqI+JYFNpft0WVCTZWcnjamBLhO7pGpez18SRn1q15gq7Ri6ncg63FshyiX\nbJRNed1hSPhmavma+yYeYxewifhArwxXyV0fk3uJAoGBANTmqkxnajIhamt8BJ5v\nOAleMG2p6WAkvGjmb/bqWIXjiqsq+b6rDSZsAuTPD785I2vEmHLwIhWLqyOkgjuO\nEAP/O5mCXZeiuYJmQAmrQKi1c19idLQBHoEylYyDUom14upEzfqJ2FlYAyGWLyPq\nW6WvV0B5TrZgwNoRCSVNnsVA\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@ecotechlimpo.iam.gserviceaccount.com",
+  "client_id": "107674580485974886494",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40ecotechlimpo.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

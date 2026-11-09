@@ -1,0 +1,95 @@
+
+.ecopontos-page {
+    padding: 65px 0 90px;
+}
+
+.ecopontos-intro {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+.ecopontos-intro h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.map-container {
+    height: 460px;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e5e9e3;
+}
+
+#mapaEcopontos {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.ecopontos-panel {
+    background: #fff;
+    border: 1px solid #e5e9e3;
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.ecoponto-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #edf0eb;
+}
+
+.ecoponto-item:last-child {
+    border-bottom: none;
+}
+
+.ecoponto-distance {
+    color: #315b45;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.ecoponto-link {
+    color: #315b45;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.ecoponto-link:hover {
+    text-decoration: underline;
+}
+
+.location-button {
+    background: #315b45;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 18px;
+}
+
+.location-button:hover {
+    background: #244533;
+    color: #fff;
+}
+
+.location-button:disabled {
+    opacity: .7;
+    cursor: wait;
+}
+
+#statusEcopontos {
+    color: #737b74;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .ecopontos-page {
+        padding: 45px 0 65px;
+    }
+
+    .map-container {
+        height: 350px;
+    }
+}

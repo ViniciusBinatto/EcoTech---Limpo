@@ -1,0 +1,177 @@
+.painel-admin {
+    min-height: 80vh;
+    padding: 55px 0 80px;
+    background: var(--background);
+}
+
+.admin-cabecalho {
+    margin-bottom: 35px;
+}
+
+.admin-etiqueta {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.admin-cabecalho h1 {
+    margin: 12px 0;
+    color: var(--text);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 650;
+}
+
+.admin-cabecalho p {
+    color: var(--muted);
+}
+
+.admin-resumo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+}
+
+.admin-resumo strong {
+    font-size: 25px;
+    color: var(--green);
+}
+
+.admin-vazio {
+    padding: 45px 20px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.admin-vazio h2 {
+    font-size: 20px;
+    color: var(--text);
+}
+
+.admin-vazio p {
+    color: var(--muted);
+}
+
+.admin-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.admin-produto {
+    display: flex;
+    gap: 25px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.admin-produto-foto,
+.admin-sem-foto {
+    width: 190px;
+    height: 190px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.admin-sem-foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    color: var(--muted);
+}
+
+.admin-produto-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.admin-produto-info h2 {
+    margin-bottom: 15px;
+    color: var(--text);
+    font-size: 21px;
+}
+
+.admin-produto-info p {
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.admin-usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 18px;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.admin-usuario span {
+    color: var(--muted);
+}
+
+.admin-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.btn-aprovar,
+.btn-rejeitar {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-aprovar {
+    background: #27834a;
+}
+
+.btn-aprovar:hover {
+    background: #1e693b;
+}
+
+.btn-rejeitar {
+    background: #c0392b;
+}
+
+.btn-rejeitar:hover {
+    background: #a52e23;
+}
+
+@media (max-width: 650px) {
+    .admin-produto {
+        flex-direction: column;
+    }
+
+    .admin-produto-foto,
+    .admin-sem-foto {
+        width: 100%;
+        height: 220px;
+    }
+
+    .admin-acoes {
+        flex-direction: column;
+    }
+
+    .admin-acoes form,
+    .admin-acoes button {
+        width: 100%;
+    }
+}

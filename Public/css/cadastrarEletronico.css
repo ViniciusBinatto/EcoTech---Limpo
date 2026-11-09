@@ -1,0 +1,126 @@
+
+.cadastro-eletronico {
+    padding: 55px 0 80px;
+    background: var(--background);
+    min-height: 80vh;
+}
+
+.voltar-perfil {
+    display: inline-block;
+    margin-bottom: 35px;
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.voltar-perfil:hover {
+    text-decoration: underline;
+}
+
+.formulario-cabecalho {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+.formulario-etiqueta {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.formulario-cabecalho h1 {
+    margin: 12px 0;
+    color: var(--text);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 650;
+}
+
+.formulario-cabecalho p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.formulario-eletronico {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.formulario-cabecalho {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 35px;
+}
+
+.campo-grupo {
+    margin-bottom: 23px;
+}
+
+.campo-grupo label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    outline: none;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(49, 91, 69, 0.1);
+}
+
+.campo-grupo textarea {
+    resize: vertical;
+}
+
+.campo-grupo small {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+}
+
+.btn-enviar-eletronico {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: var(--green);
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-enviar-eletronico:hover {
+    background: var(--green-dark);
+}
+
+@media (max-width: 576px) {
+    .formulario-eletronico {
+        padding: 22px;
+    }
+
+    .cadastro-eletronico {
+        padding-top: 35px;
+    }
+}
+```

@@ -1,0 +1,350 @@
+
+:root {
+    --green: #315b45;
+    --green-dark: #244533;
+    --background: #f8f9f6;
+    --text: #252c27;
+    --muted: #737b74;
+    --border: #e5e9e3;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* CABEÇALHO */
+
+.navbar {
+    min-height: 78px;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+    color: var(--text);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.navbar-brand span {
+    color: var(--green);
+}
+
+.nav-link {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    color: var(--green);
+}
+
+/* BOTÕES */
+
+.btn-eco {
+    background: var(--green);
+    color: var(--white);
+    padding: 13px 22px;
+    border-radius: 5px;
+}
+
+.btn-eco:hover {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+.btn-outline-eco {
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 13px 22px;
+    border-radius: 5px;
+}
+
+.btn-outline-eco:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+/* PÁGINA INICIAL */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    max-width: 700px;
+    margin-top: 22px;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    font-weight: 600;
+}
+
+.hero p {
+    max-width: 560px;
+    margin-top: 24px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.impact-section {
+    padding-top: 65px;
+    padding-bottom: 100px;
+    border-top: 1px solid var(--border);
+}
+
+.impact-section h2 {
+    max-width: 600px;
+    margin-top: 15px;
+    font-size: 34px;
+    letter-spacing: -1px;
+}
+
+.feature-card {
+    height: 100%;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+}
+
+.feature-number {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.feature-card h3 {
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+.feature-card p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* PÁGINAS INTERNAS */
+
+.page-hero {
+    padding-top: 105px;
+    padding-bottom: 100px;
+}
+
+.page-hero h1 {
+    max-width: 850px;
+    margin-top: 22px;
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    font-weight: 600;
+}
+
+.page-hero p {
+    max-width: 650px;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* CONTEÚDO SOBRE */
+
+.content-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    border-top: 1px solid var(--border);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 70px;
+}
+
+.content-grid h2,
+.principles-section h2,
+.closing-panel h2 {
+    margin-top: 16px;
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+}
+
+.content-grid p {
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* ECONOMIA CIRCULAR */
+
+.principles-section {
+    padding-top: 85px;
+    padding-bottom: 90px;
+    background: #eef2ed;
+}
+
+.section-description {
+    max-width: 600px;
+    margin-top: 18px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.cycle-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 45px;
+}
+
+.cycle-card {
+    min-height: 205px;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.cycle-card span {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.cycle-card h3 {
+    margin-top: 35px;
+    font-size: 19px;
+}
+
+.cycle-card p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* PAINEL FINAL */
+
+.closing-panel {
+    max-width: 780px;
+    padding: 45px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+}
+
+.closing-panel p {
+    max-width: 600px;
+    margin-top: 18px;
+    margin-bottom: 25px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* RODAPÉ */
+
+.site-footer {
+    padding: 35px 0;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer span {
+    font-weight: 700;
+    color: var(--green);
+}
+
+.site-footer p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.site-footer small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 991px) {
+    .cycle-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .cycle-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-hero {
+        padding-top: 75px;
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .impact-section h2 {
+        font-size: 28px;
+    }
+
+    .cycle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .closing-panel {
+        padding: 28px;
+    }
+}

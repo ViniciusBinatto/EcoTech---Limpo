@@ -1,0 +1,46 @@
+<header class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            Eco<span>Tech</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-controls="menu" aria-expanded="false"
+            aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/sobre">Sobre</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/ecoprodutos">EcoProdutos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/ecopontos">Ecopontos</a>
+                </li>
+
+                <% if (nomeUsuario) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/perfil">Minha conta</a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Entrar</a>
+                    </li>
+                <% } %>
+
+            </ul>
+        </nav>
+    </div>
+</header>

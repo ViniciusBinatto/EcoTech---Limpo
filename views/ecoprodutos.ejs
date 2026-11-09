@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoProdutos | EcoTech</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ecoprodutos.css">
+</head>
+
+<body>
+
+    <%- include("partials/header") %>
+
+    <main class="ecoprodutos-page">
+        <div class="container">
+
+            <div class="produtos-intro">
+                <span class="text-success fw-semibold">CONSUMO CONSCIENTE</span>
+
+                <h1>Um novo ciclo para a tecnologia.</h1>
+
+                <p class="text-secondary">
+                    Conheça eletrônicos que podem ganhar uma nova vida.
+                    Reutilizar equipamentos é uma forma de reduzir o descarte
+                    e incentivar a economia circular.
+                </p>
+            </div>
+
+            <div class="produtos-toolbar">
+                <input
+                    type="search"
+                    id="pesquisaProdutos"
+                    class="produtos-search"
+                    placeholder="Pesquisar por produto, marca ou modelo..."
+                    aria-label="Pesquisar produtos"
+                >
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-4" id="filtrosProdutos">
+                <button class="categoria-btn active" data-categoria="todos">Todos</button>
+                <button class="categoria-btn" data-categoria="celular">Celulares</button>
+                <button class="categoria-btn" data-categoria="computador">Computadores</button>
+                <button class="categoria-btn" data-categoria="tablet">Tablets</button>
+                <button class="categoria-btn" data-categoria="televisao">Televisões</button>
+                <button class="categoria-btn" data-categoria="outros">Outros</button>
+            </div>
+
+            <div class="row g-4" id="listaProdutos">
+
+                <% const nomesCategorias = {
+                    celular: "Celular",
+                    computador: "Computador",
+                    tablet: "Tablet",
+                    televisao: "Televisão",
+                    perifericos: "Periférico",
+                    console: "Console",
+                    impressora: "Impressora",
+                    outros: "Outros"
+                }; %>
+
+                <% produtos.forEach(produto => { %>
+
+                    <% const categoriaFiltro = ["celular", "computador", "tablet", "televisao"].includes(produto.categoria)
+                        ? produto.categoria
+                        : "outros"; %>
+
+                    <div
+                        class="col-sm-6 col-lg-4 produto-item"
+                        data-categoria="<%= categoriaFiltro %>"
+                        data-nome="<%= produto.nome || '' %>"
+                        data-marca="<%= produto.marca || '' %>"
+                        data-modelo="<%= produto.modelo || '' %>"
+                    >
+
+                        <article class="produto-card">
+
+                            <div class="produto-imagem">
+                                <% if (produto.fotoUrl) { %>
+                                    <img
+                                        src="<%= produto.fotoUrl %>"
+                                        alt="<%= produto.nome %>"
+                                        loading="lazy"
+                                    >
+                                <% } else { %>
+                                    <div class="produto-sem-imagem">
+                                        Sem foto disponível
+                                    </div>
+                                <% } %>
+                            </div>
+
+                            <div class="produto-conteudo">
+
+                                <span class="produto-categoria">
+                                    <%= nomesCategorias[produto.categoria] || "Eletrônico" %>
+                                </span>
+
+                                <h3 class="produto-nome">
+                                    <%= produto.nome || "Eletrônico sem nome" %>
+                                </h3>
+
+                                <p class="produto-descricao">
+                                    <%= produto.descricao || "Sem descrição." %>
+                                </p>
+
+                                <p class="produto-preco">
+                                    <% if (produto.preco !== null && produto.preco !== undefined && produto.preco !== "") { %>
+                                        <%= Number(produto.preco).toLocaleString("pt-BR", {
+                                            style: "currency",
+                                            currency: "BRL"
+                                        }) %>
+                                    <% } else { %>
+                                        Preço não informado
+                                    <% } %>
+                                </p>
+
+                                <button
+                                    class="produto-btn"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalProduto"
+                                    data-nome="<%= produto.nome || '' %>"
+                                    data-categoria="<%= nomesCategorias[produto.categoria] || 'Eletrônico' %>"
+                                    data-descricao="<%= produto.descricao || 'Sem descrição.' %>"
+                                    data-preco="<%= produto.preco !== null && produto.preco !== undefined && produto.preco !== '' ? Number(produto.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : 'Preço não informado' %>"
+                                    data-funcionamento="<%= produto.funcionamento || 'Não informado' %>"
+                                    data-problema="<%= produto.problema || 'Nenhum problema informado.' %>"
+                                >
+                                    Ver detalhes
+                                </button>
+
+                            </div>
+                        </article>
+                    </div>
+
+                <% }) %>
+
+            </div>
+
+            <div class="produto-vazio" id="produtosVazios"
+                style="<%= produtos.length === 0 ? 'display:block' : 'display:none' %>">
+
+                <% if (produtos.length === 0) { %>
+                    <h5>Nenhum eletrônico disponível no momento.</h5>
+                    <p>Novos produtos aparecerão aqui após a aprovação.</p>
+                <% } else { %>
+                    <h5>Nenhum produto encontrado.</h5>
+                    <p>Tente pesquisar por outro nome ou categoria.</p>
+                <% } %>
+
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalProduto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProdutoTitulo">Detalhes do produto</h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar"
+                    ></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Categoria:</strong>
+                        <span id="modalProdutoCategoria"></span>
+                    </p>
+
+                    <p id="modalProdutoDescricao"></p>
+
+                    <p>
+                        <strong>Funcionamento:</strong>
+                        <span id="modalProdutoFuncionamento"></span>
+                    </p>
+
+                    <p>
+                        <strong>Problemas:</strong>
+                        <span id="modalProdutoProblema"></span>
+                    </p>
+
+                    <h5 class="text-success" id="modalProdutoPreco"></h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ecoprodutos.js"></script>
+
+</body>
+</html>

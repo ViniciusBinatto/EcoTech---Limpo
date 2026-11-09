@@ -1,0 +1,240 @@
+
+.cadastro-eletronico-page {
+    background: var(--background, #f8f9f6);
+}
+
+.formulario-container {
+    width: min(900px, calc(100% - 36px));
+    margin: 0 auto;
+    padding: 60px 0 85px;
+}
+
+.formulario-heading {
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.formulario-eyebrow {
+    color: var(--green, #315b45);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.formulario-heading h1 {
+    margin: 12px 0;
+    color: var(--text, #252c27);
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.formulario-heading p {
+    color: var(--muted, #737b74);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.eletronico-form {
+    padding: 35px;
+    border: 1px solid var(--border, #e5e9e3);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.form-section {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border, #e5e9e3);
+}
+
+.form-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.form-section-heading > span {
+    color: var(--green, #315b45);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-section-heading h2 {
+    margin: 0 0 6px;
+    color: var(--text, #252c27);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.form-section-heading p {
+    margin: 0;
+    color: var(--muted, #737b74);
+    font-size: 13px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-grid .form-field {
+    margin-bottom: 0;
+}
+
+.form-field label {
+    color: var(--text, #252c27);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid var(--border, #e5e9e3);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text, #252c27);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--green, #315b45);
+}
+
+.form-field small {
+    color: var(--muted, #737b74);
+    font-size: 11px;
+}
+
+.form-price-field {
+    max-width: 350px;
+}
+
+.form-notice {
+    padding: 18px 20px;
+    border-left: 3px solid var(--green, #315b45);
+    background: #f3f6f2;
+}
+
+.form-notice strong {
+    color: var(--text, #252c27);
+    font-size: 13px;
+}
+
+.form-notice p {
+    margin: 7px 0 0;
+    color: var(--muted, #737b74);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.form-actions a {
+    color: var(--muted, #737b74);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.form-actions button {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 6px;
+    background: var(--green, #315b45);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-actions button:hover {
+    background: var(--green-dark, #244533);
+}
+
+.form-message {
+    margin-bottom: 22px;
+    padding: 15px 18px;
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.form-error {
+    border: 1px solid #e8caca;
+    background: #fff5f5;
+    color: #a33333;
+}
+
+.form-success {
+    border: 1px solid #cbdccc;
+    background: #f1f7f1;
+    color: #315b45;
+}
+
+.form-success p {
+    margin: 8px 0 0;
+}
+
+.form-success a {
+    color: inherit;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .formulario-container {
+        padding-top: 38px;
+    }
+
+    .formulario-heading h1 {
+        font-size: 28px;
+    }
+
+    .eletronico-form {
+        padding: 23px 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .form-actions a {
+        text-align: center;
+    }
+}
