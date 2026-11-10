@@ -9,14 +9,22 @@ const {
     getDatabase
 } = require("firebase-admin/database");
 
-const path = require("path");
-
-const serviceAccount = require(
-    path.join(__dirname, "firebase-admin.json")
-);
+if (!process.env.FIREBASE_SERVICE_ACCOUNT) {
+    throw new Error("FIREBASE_SERVICE_ACCOUNT não configurada.");
+}
 
 if (!process.env.FIREBASE_DATABASE_URL) {
     throw new Error("FIREBASE_DATABASE_URL não configurada.");
+}
+
+let serviceAccount;
+
+try {
+    serviceAccount = JSON.parse(
+        process.env.FIREBASE_SERVICE_ACCOUNT
+    );
+} catch (erro) {
+    throw new Error("A credencial do Firebase Admin SDK não é um JSON válido.");
 }
 
 const app = getApps().length
