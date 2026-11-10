@@ -1,4 +1,8 @@
 
+// ======================================
+// SISTEMA DE PRODUTOS
+// ======================================
+
 const campoPesquisa = document.getElementById("pesquisaProdutos");
 const botoesCategorias = document.querySelectorAll(".categoria-btn");
 const produtos = document.querySelectorAll(".produto-item");
@@ -6,76 +10,95 @@ const mensagemVazia = document.getElementById("produtosVazios");
 
 let categoriaSelecionada = "todos";
 
-function filtrarProdutos() {
-    const pesquisa = campoPesquisa.value.toLowerCase().trim();
+if (campoPesquisa) {
 
-    let quantidadeVisivel = 0;
+    function filtrarProdutos() {
 
-    produtos.forEach(produto => {
-        const nome = (produto.dataset.nome || "").toLowerCase();
-        const marca = (produto.dataset.marca || "").toLowerCase();
-        const modelo = (produto.dataset.modelo || "").toLowerCase();
-        const categoria = produto.dataset.categoria;
+        const pesquisa = campoPesquisa.value.toLowerCase().trim();
 
-        const correspondePesquisa =
-            nome.includes(pesquisa) ||
-            marca.includes(pesquisa) ||
-            modelo.includes(pesquisa);
+        let quantidadeVisivel = 0;
 
-        const correspondeCategoria =
-            categoriaSelecionada === "todos" ||
-            categoria === categoriaSelecionada;
+        produtos.forEach(produto => {
 
-        const mostrar = correspondePesquisa && correspondeCategoria;
+            const nome = (produto.dataset.nome || "").toLowerCase();
+            const marca = (produto.dataset.marca || "").toLowerCase();
+            const modelo = (produto.dataset.modelo || "").toLowerCase();
+            const categoria = produto.dataset.categoria;
 
-        produto.style.display = mostrar ? "" : "none";
+            const correspondePesquisa =
+                nome.includes(pesquisa) ||
+                marca.includes(pesquisa) ||
+                modelo.includes(pesquisa);
 
-        if (mostrar) {
-            quantidadeVisivel++;
-        }
-    });
+            const correspondeCategoria =
+                categoriaSelecionada === "todos" ||
+                categoria === categoriaSelecionada;
 
+            const mostrar = correspondePesquisa && correspondeCategoria;
+
+            produto.style.display = mostrar ? "" : "none";
+
+            if (mostrar) quantidadeVisivel++;
+
+        });
+
+        if (mensagemVazia) {
+            if (mensagemVazia) {
     mensagemVazia.style.display =
         quantidadeVisivel === 0 ? "block" : "none";
 }
+    }
 
-campoPesquisa.addEventListener("input", filtrarProdutos);
+    if (campoPesquisa) {
+    campoPesquisa.addEventListener("input", filtrarProdutos);
+}
 
-botoesCategorias.forEach(botao => {
-    botao.addEventListener("click", () => {
-        botoesCategorias.forEach(item => {
-            item.classList.remove("active");
+    botoesCategorias.forEach(botao => {
+
+        botao.addEventListener("click", () => {
+
+            botoesCategorias.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            botao.classList.add("active");
+
+            categoriaSelecionada = botao.dataset.categoria;
+
+            filtrarProdutos();
+
         });
 
-        botao.classList.add("active");
-        categoriaSelecionada = botao.dataset.categoria;
-
-        filtrarProdutos();
     });
-});
 
-// MODAL DE DETALHES
+}
+
+// ======================================
+// MODAL DE PRODUTOS
+// ======================================
 
 const modalProduto = document.getElementById("modalProduto");
 
-modalProduto.addEventListener("show.bs.modal", evento => {
-    const botao = evento.relatedTarget;
+if (modalProduto) {
 
-    document.getElementById("modalProdutoTitulo").textContent =
-        botao.dataset.nome;
+    modalProduto.addEventListener("show.bs.modal", evento => {
 
-    document.getElementById("modalProdutoCategoria").textContent =
-        botao.dataset.categoria;
+        const botao = evento.relatedTarget;
 
-    document.getElementById("modalProdutoDescricao").textContent =
-        botao.dataset.descricao;
+        if (!botao) return;
 
-    document.getElementById("modalProdutoPreco").textContent =
-        botao.dataset.preco;
+        document.getElementById("modalProdutoTitulo").textContent =
+            botao.dataset.nome || "";
 
-    document.getElementById("modalProdutoFuncionamento").textContent =
-        botao.dataset.funcionamento;
+        document.getElementById("modalProdutoCategoria").textContent =
+            botao.dataset.categoria || "";
 
-    document.getElementById("modalProdutoProblema").textContent =
-        botao.dataset.problema;
-});
+        document.getElementById("modalProdutoDescricao").textContent =
+            botao.dataset.descricao || "";
+
+        document.getElementById("modalProdutoPreco").textContent =
+            botao.dataset.preco || "";
+
+    });
+
+}}
